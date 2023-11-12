@@ -20,9 +20,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define VIAL_KEYBOARD_UID {0x3B, 0x6B, 0xA0, 0x29, 0x80, 0x56, 0xED, 0xD1}
 #define VIAL_UNLOCK_COMBO_ROWS {0, 0}
-#define VIAL_UNLOCK_COMBO_COLS {0, 1}
+#define VIAL_UNLOCK_COMBO_COLS {1, 2}
+#define VIAL_TAP_DANCE_ENTRIES 16
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 4
+#define DYNAMIC_KEYMAP_LAYER_COUNT 3
 #define TAPPING_TERM 180
 
 //#define USE_MATRIX_I2C
@@ -33,22 +34,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Select hand configuration */
 
-#define MASTER_LEFT
-// #define MASTER_RIGHT
+//#define MASTER_LEFT
+#define MASTER_RIGHT
 // #define EE_HANDS
 
 #define USE_SERIAL_PD2
 #ifdef RGBLIGHT_ENABLE
 #    undef RGBLED_NUM
-#    define RGBLIGHT_ANIMATIONS
 #    define RGBLED_NUM 54
 #    undef RGBLED_SPLIT
 #    define RGBLED_SPLIT \
         { 27, 27 }
-#    define RGBLIGHT_LIMIT_VAL 120
-#    define RGBLIGHT_HUE_STEP  10
-#    define RGBLIGHT_SAT_STEP  17
-#    define RGBLIGHT_VAL_STEP  17
+#    define RGBLIGHT_LIMIT_VAL   120
+#    define RGBLIGHT_DEFAULT_HUE 207
+#    define RGBLIGHT_DEFAULT_SAT 170
+#    define RGBLIGHT_DEFAULT_VAL 75
+#    define RGBLIGHT_HUE_STEP    10
+#    define RGBLIGHT_SAT_STEP    17
+#    define RGBLIGHT_VAL_STEP    17
+#    define RGBLIGHT_DEFAULT_SPD 100
+#    define RGBLIGHT_SPLIT
+#    define RGBLIGHT_EFFECT_BREATHING
+#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
+#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 #endif
 
 #define OLED_FONT_H "keyboards/crkbd/lib/glcdfont.c"
